@@ -16,12 +16,13 @@ class ActivityTest {
     var rule: ActivityScenarioRule<*> = ActivityScenarioRule(MainActivity::class.java)
 
     @Test
-    fun simpleDivide(){
+    fun simpleDivide() {
         Espresso.onView(withId(R.id.et_fnum)).perform(ViewActions.typeText("10"))
         Espresso.onView(withId(R.id.et_fnum)).perform(ViewActions.closeSoftKeyboard())
         Espresso.onView(withId(R.id.et_snum)).perform(ViewActions.typeText("0"))
         Espresso.onView(withId(R.id.et_snum)).perform(ViewActions.closeSoftKeyboard())
         Espresso.onView(withId(R.id.btn_divide)).perform(ViewActions.click())
-        Espresso.onView(withId(R.id.tv_result)).check(ViewAssertions.matches(ViewMatchers.withText("Can't divide by zero")))
+        Espresso.onView(withId(R.id.tv_result))
+            .check(ViewAssertions.matches(ViewMatchers.withText("Can't divide by zero")))
     }
 }

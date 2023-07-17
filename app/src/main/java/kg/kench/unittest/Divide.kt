@@ -2,16 +2,17 @@ package kg.kench.unittest
 
 class Divide {
 
-    fun divide(a: String, b: String): String{
+    fun divide(a: String, b: String): String {
         var result = ""
 
-        if (b == "0"){
+        if (b == "0" || a == "0") {
             result = "Can't divide by zero"
-        }else
-        try {
-            result = (a.toDouble() / b.toDouble()).toInt().toString()
-        }catch (ex: Exception){
-            result = "Error: ${ex.message}"
+        } else {
+            try {
+                result = (a.toDouble() / b.toDouble()).toInt().toString()
+            } catch (ex: Exception) {
+                result = "Error: ${ex.message}"
+            }
         }
         return result
     }

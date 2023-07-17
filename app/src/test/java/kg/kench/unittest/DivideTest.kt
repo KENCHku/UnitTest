@@ -10,22 +10,22 @@ class DivideTest {
     var divide: kg.kench.unittest.Divide? = null
 
     @Before
-    fun init(){
+    fun init() {
         divide = Divide()
     }
 
     @Test
-    fun divide(){
+    fun divide() {
         assertEquals("5", divide?.divide("10", "2"))
     }
 
     @Test
-    fun divideZero(){
+    fun divideZero() {
         assertEquals("Can't divide by zero", divide?.divide("10", "0"))
     }
 
     @After
-    fun detach(){
+    fun detach() {
         divide = null
     }
 }
